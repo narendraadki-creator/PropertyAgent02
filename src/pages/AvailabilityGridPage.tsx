@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getMockPropertyDetails } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const AvailabilityGridPage: React.FC = () => {
   const { propertyId } = useParams<{ propertyId: string }>();
@@ -214,7 +214,7 @@ const AvailabilityGridPage: React.FC = () => {
         </div>
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

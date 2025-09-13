@@ -132,3 +132,85 @@ export interface AgentProfile {
     notifications: boolean;
   };
 }
+
+export interface DeveloperProfile {
+  id: string;
+  name: string;
+  companyName: string;
+  designation: string;
+  region: string;
+  phone: string;
+  email: string;
+  avatar?: string;
+  stats: {
+    totalProjects: number;
+    activeListings: number;
+    unitsSold: number;
+    revenue: string;
+  };
+  settings: {
+    currency: string;
+    language: string;
+    notifications: boolean;
+  };
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  developerId: string;
+  location: string;
+  type: 'Apartment' | 'Villa' | 'Flat' | 'Plot' | 'Office';
+  startingPrice: string;
+  possessionDate: string;
+  status: 'Planning' | 'Under Construction' | 'Ready' | 'Completed';
+  totalUnits: number;
+  availableUnits: number;
+  soldUnits: number;
+  heldUnits: number;
+  image: string;
+  description: string;
+  amenities: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Activity {
+  id: string;
+  type: 'upload' | 'booking' | 'price_update' | 'lead' | 'project_created';
+  title: string;
+  description: string;
+  timestamp: string;
+  projectId?: string;
+  projectName?: string;
+}
+
+export interface PaymentPlan {
+  id: string;
+  projectId: string;
+  name: string;
+  downPayment: string;
+  installments: string;
+  possessionPayment: string;
+  emiAmount?: string;
+  tenure?: string;
+}
+
+export interface Document {
+  id: string;
+  projectId: string;
+  name: string;
+  type: 'brochure' | 'floorplan' | 'layout' | 'legal' | 'other';
+  url: string;
+  version: string;
+  uploadedAt: string;
+  size: string;
+}
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: 'agent' | 'developer';
+  profile: AgentProfile | DeveloperProfile;
+}

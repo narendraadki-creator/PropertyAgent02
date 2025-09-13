@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Grid3X3, List, Filter } from 'lucide-react';
 import { mockDevelopers, mockProperties } from '../data/mockData';
 import PropertyCard from '../components/PropertyCard';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const DeveloperPropertiesPage: React.FC = () => {
   const { developerId } = useParams<{ developerId: string }>();
@@ -128,7 +128,7 @@ const DeveloperPropertiesPage: React.FC = () => {
         )}
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

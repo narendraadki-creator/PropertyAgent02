@@ -1,4 +1,5 @@
 import { Developer, Property, PropertyDetails, Lead, Booking, Message, ChatMessage, AgentProfile } from '../types';
+import { DeveloperProfile, Project, Activity, PaymentPlan, Document, User } from '../types';
 
 export const mockDevelopers: Developer[] = [
   {
@@ -419,4 +420,132 @@ export const mockAgentProfile: AgentProfile = {
     language: 'English',
     notifications: true
   }
+};
+
+export const mockDeveloperProfile: DeveloperProfile = {
+  id: '1',
+  name: 'Rajesh Sharma',
+  companyName: 'Godrej Properties',
+  designation: 'Project Manager',
+  region: 'Gurgaon & Delhi NCR',
+  phone: '+91 98765 43211',
+  email: 'rajesh.sharma@godrej.com',
+  stats: {
+    totalProjects: 8,
+    activeListings: 5,
+    unitsSold: 142,
+    revenue: '₹85.6 Cr'
+  },
+  settings: {
+    currency: 'INR',
+    language: 'English',
+    notifications: true
+  }
+};
+
+export const mockProjects: Project[] = [
+  {
+    id: '1',
+    name: 'Godrej Meridien',
+    developerId: '1',
+    location: 'Sector 106, Gurgaon',
+    type: 'Apartment',
+    startingPrice: '₹1.2 Cr',
+    possessionDate: 'Dec 2025',
+    status: 'Under Construction',
+    totalUnits: 120,
+    availableUnits: 45,
+    soldUnits: 65,
+    heldUnits: 10,
+    image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Premium residential project with world-class amenities',
+    amenities: ['Swimming Pool', 'Gym', 'Clubhouse', 'Garden', 'Security'],
+    createdAt: '2024-01-15',
+    updatedAt: '2024-12-15'
+  },
+  {
+    id: '2',
+    name: 'Godrej Park Avenue',
+    developerId: '1',
+    location: 'Sector 79, Gurgaon',
+    type: 'Apartment',
+    startingPrice: '₹95 Lac',
+    possessionDate: 'Mar 2026',
+    status: 'Planning',
+    totalUnits: 200,
+    availableUnits: 180,
+    soldUnits: 15,
+    heldUnits: 5,
+    image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Affordable luxury living with green spaces',
+    amenities: ['Garden', 'Playground', 'Community Hall', 'Parking'],
+    createdAt: '2024-02-20',
+    updatedAt: '2024-12-10'
+  },
+  {
+    id: '3',
+    name: 'Godrej Heights',
+    developerId: '1',
+    location: 'Sector 89, Gurgaon',
+    type: 'Apartment',
+    startingPrice: '₹1.8 Cr',
+    possessionDate: 'Jun 2025',
+    status: 'Ready',
+    totalUnits: 80,
+    availableUnits: 12,
+    soldUnits: 68,
+    heldUnits: 0,
+    image: 'https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Ready to move luxury apartments',
+    amenities: ['Swimming Pool', 'Gym', 'Spa', 'Concierge', 'Valet Parking'],
+    createdAt: '2023-08-10',
+    updatedAt: '2024-12-12'
+  }
+];
+
+export const mockActivities: Activity[] = [
+  {
+    id: '1',
+    type: 'booking',
+    title: 'New Booking Received',
+    description: 'Unit A1201 booked in Godrej Meridien',
+    timestamp: '2 hours ago',
+    projectId: '1',
+    projectName: 'Godrej Meridien'
+  },
+  {
+    id: '2',
+    type: 'upload',
+    title: 'Brochure Updated',
+    description: 'New brochure uploaded for Godrej Park Avenue',
+    timestamp: '5 hours ago',
+    projectId: '2',
+    projectName: 'Godrej Park Avenue'
+  },
+  {
+    id: '3',
+    type: 'lead',
+    title: 'New Lead Assigned',
+    description: 'High-value lead for Godrej Heights',
+    timestamp: '1 day ago',
+    projectId: '3',
+    projectName: 'Godrej Heights'
+  },
+  {
+    id: '4',
+    type: 'price_update',
+    title: 'Price Updated',
+    description: 'Starting price updated for Godrej Meridien',
+    timestamp: '2 days ago',
+    projectId: '1',
+    projectName: 'Godrej Meridien'
+  }
+];
+
+export const mockCurrentUser: User = {
+  id: '1',
+  name: 'Arjun Mehta',
+  email: 'arjun.mehta@propertyagent.com',
+  role: 'agent',
+  profile: mockAgentProfile
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Building, Calendar, CreditCard, FileText, AlertCircle } from 'lucide-react';
 import { mockBookings } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const BookingsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -207,7 +207,7 @@ const BookingsPage: React.FC = () => {
         )}
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

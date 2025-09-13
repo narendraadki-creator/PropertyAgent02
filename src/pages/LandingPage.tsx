@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { mockDevelopers } from '../data/mockData';
 import SearchFilters from '../components/SearchFilters';
 import DeveloperCard from '../components/DeveloperCard';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

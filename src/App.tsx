@@ -8,12 +8,16 @@ import LeadsPage from './pages/LeadsPage';
 import BookingsPage from './pages/BookingsPage';
 import MessagesPage from './pages/MessagesPage';
 import ProfilePage from './pages/ProfilePage';
+import DeveloperDashboard from './pages/DeveloperDashboard';
+import DeveloperProjects from './pages/DeveloperProjects';
+import AddProject from './pages/AddProject';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-neutral-50">
         <Routes>
+          {/* Agent Routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/developer/:developerId" element={<DeveloperPropertiesPage />} />
           <Route path="/property/:propertyId" element={<PropertyDetailsPage />} />
@@ -22,6 +26,11 @@ function App() {
           <Route path="/bookings" element={<BookingsPage />} />
           <Route path="/messages" element={<MessagesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          
+          {/* Developer Routes */}
+          <Route path="/developer/dashboard" element={<DeveloperDashboard />} />
+          <Route path="/developer/projects" element={<DeveloperProjects />} />
+          <Route path="/developer/projects/new" element={<AddProject />} />
         </Routes>
       </div>
     </Router>

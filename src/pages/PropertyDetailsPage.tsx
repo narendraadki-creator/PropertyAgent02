@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share, Heart, MapPin, Calendar, Bed, Bath, Download, Grid3X3, Phone, MessageCircle } from 'lucide-react';
 import { getMockPropertyDetails } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const PropertyDetailsPage: React.FC = () => {
   const { propertyId } = useParams<{ propertyId: string }>();
@@ -322,7 +322,7 @@ const PropertyDetailsPage: React.FC = () => {
         </div>
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

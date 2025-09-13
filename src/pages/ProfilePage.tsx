@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Edit3, Phone, Mail, MapPin, Target, TrendingUp, Award, Settings, Globe, Bell, LogOut, User } from 'lucide-react';
 import { mockAgentProfile } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const ProfilePage: React.FC = () => {
   const navigate = useNavigate();
@@ -192,7 +192,7 @@ const ProfilePage: React.FC = () => {
         </div>
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, Filter, Phone, Mail, MessageCircle, Eye } from 'lucide-react';
 import { mockLeads } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const LeadsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -188,7 +188,7 @@ const LeadsPage: React.FC = () => {
         )}
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };

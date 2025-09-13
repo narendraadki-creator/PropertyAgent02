@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, MessageCircle, Phone, Paperclip, Send, FileText, Image, DollarSign } from 'lucide-react';
 import { mockMessages, mockChatMessages } from '../data/mockData';
-import BottomNavigation from '../components/BottomNavigation';
+import AgentBottomNavigation from '../components/AgentBottomNavigation';
 
 const MessagesPage: React.FC = () => {
   const navigate = useNavigate();
@@ -259,7 +259,7 @@ const MessagesPage: React.FC = () => {
         )}
       </div>
 
-      <BottomNavigation />
+      <AgentBottomNavigation />
     </div>
   );
 };
