@@ -4,10 +4,19 @@ import { Bell, Plus, TrendingUp, Building, Users, DollarSign, Activity, Eye } fr
 import { mockDeveloperProfile, mockProjects, mockActivities } from '../data/mockData';
 import ProjectCard from '../components/ProjectCard';
 import DeveloperBottomNavigation from '../components/DeveloperBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const DeveloperDashboard: React.FC = () => {
   const navigate = useNavigate();
   const profile = mockDeveloperProfile;
+  
+  // Create a developer user for the layout
+  const developerUser = {
+    ...mockCurrentUser,
+    role: 'developer' as const,
+    profile: profile
+  };
 
   const getActivityIcon = (type: string) => {
     switch (type) {
@@ -25,7 +34,7 @@ const DeveloperDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={developerUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="px-4 py-4">
@@ -189,8 +198,7 @@ const DeveloperDashboard: React.FC = () => {
         </div>
       </div>
 
-      <DeveloperBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, MessageCircle, Phone, Paperclip, Send, FileText, Image, DollarSign } from 'lucide-react';
 import { mockMessages, mockChatMessages } from '../data/mockData';
 import AgentBottomNavigation from '../components/AgentBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const MessagesPage: React.FC = () => {
   const navigate = useNavigate();
@@ -161,7 +163,7 @@ const MessagesPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={mockCurrentUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="px-4 py-4">
@@ -259,8 +261,7 @@ const MessagesPage: React.FC = () => {
         )}
       </div>
 
-      <AgentBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Edit3, Phone, Mail, MapPin, Target, TrendingUp, Award, Settings, Globe, Bell, LogOut, User } from 'lucide-react';
 import { mockAgentProfile } from '../data/mockData';
 import AgentBottomNavigation from '../components/AgentBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const ProfilePage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const ProfilePage: React.FC = () => {
   const progressPercentage = (profile.stats.targetsAchieved / profile.stats.monthlyTarget) * 100;
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={mockCurrentUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="px-4 py-4">
@@ -192,8 +194,7 @@ const ProfilePage: React.FC = () => {
         </div>
       </div>
 
-      <AgentBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

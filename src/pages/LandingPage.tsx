@@ -4,6 +4,8 @@ import { mockDevelopers } from '../data/mockData';
 import SearchFilters from '../components/SearchFilters';
 import DeveloperCard from '../components/DeveloperCard';
 import AgentBottomNavigation from '../components/AgentBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={mockCurrentUser} showRoleSwitcher={true}>
       {/* Hero Section */}
       <div className="bg-white pb-12">
         <div className="pt-16 pb-8 text-center px-4">
@@ -52,8 +54,7 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      <AgentBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

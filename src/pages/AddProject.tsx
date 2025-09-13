@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Upload, Plus, X, MapPin, Calendar, Building, DollarSign } from 'lucide-react';
 import DeveloperBottomNavigation from '../components/DeveloperBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser, mockDeveloperProfile } from '../data/mockData';
 
 const AddProject: React.FC = () => {
   const navigate = useNavigate();
+  
+  // Create a developer user for the layout
+  const developerUser = {
+    ...mockCurrentUser,
+    role: 'developer' as const,
+    profile: mockDeveloperProfile
+  };
+  
   const [formData, setFormData] = useState({
     name: '',
     location: '',
@@ -51,7 +61,7 @@ const AddProject: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={developerUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="px-4 py-4">
@@ -310,8 +320,7 @@ const AddProject: React.FC = () => {
         </form>
       </div>
 
-      <DeveloperBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getMockPropertyDetails } from '../data/mockData';
 import AgentBottomNavigation from '../components/AgentBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const AvailabilityGridPage: React.FC = () => {
   const { propertyId } = useParams<{ propertyId: string }>();
@@ -64,7 +66,7 @@ const AvailabilityGridPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={mockCurrentUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="px-4 py-4">
@@ -214,8 +216,7 @@ const AvailabilityGridPage: React.FC = () => {
         </div>
       </div>
 
-      <AgentBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 

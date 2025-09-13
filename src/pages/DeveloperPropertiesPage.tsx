@@ -4,6 +4,8 @@ import { ArrowLeft, Grid3X3, List, Filter } from 'lucide-react';
 import { mockDevelopers, mockProperties } from '../data/mockData';
 import PropertyCard from '../components/PropertyCard';
 import AgentBottomNavigation from '../components/AgentBottomNavigation';
+import RoleBasedLayout from '../components/RoleBasedLayout';
+import { mockCurrentUser } from '../data/mockData';
 
 const DeveloperPropertiesPage: React.FC = () => {
   const { developerId } = useParams<{ developerId: string }>();
@@ -33,7 +35,7 @@ const DeveloperPropertiesPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <RoleBasedLayout user={mockCurrentUser} showRoleSwitcher={true}>
       {/* Header */}
       <div className="bg-white border-b border-neutral-100 sticky top-0 z-40">
         <div className="flex items-center justify-between px-4 py-4">
@@ -128,8 +130,7 @@ const DeveloperPropertiesPage: React.FC = () => {
         )}
       </div>
 
-      <AgentBottomNavigation />
-    </div>
+    </RoleBasedLayout>
   );
 };
 
